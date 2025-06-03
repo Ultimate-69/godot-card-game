@@ -23,42 +23,47 @@ public partial class Card : Control
 
     public void OnReveal()
     {
-
+        CardEffects.OnReveal(cardResource);
     }
 
     public void OnGoing()
     {
-
+        CardEffects.OnGoing(cardResource);
     }
 
     public void OnTurnEnd()
     {
+        CardEffects.OnTurnEnd(cardResource);
+    }
 
+    public void OnTurnStart()
+    {
+        CardEffects.OnTurnStart(cardResource);
     }
 
     public void OnDiscard()
     {
-
+        CardEffects.OnDiscard(cardResource);
     }
 
     public void OnDestroy()
     {
-
+        CardEffects.OnDestroy(cardResource);
     }
 
     public void OnMove()
     {
-
+        CardEffects.OnMove(cardResource);
     }
 
     public void OnGameStart()
     {
-
+        CardEffects.OnGameStart(cardResource);
     }
 
     public void OnGameEnd()
     {
-
+        CardEffects.OnGameEnd(cardResource);
     }
 
 }
