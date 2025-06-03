@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cualrfmjtgbh5"]
+
+[ext_resource type="Texture2D" uid="uid://cv52lxhh1jki" path="res://Assets/Images/Cards/Screenshot 2025-06-03 234420.png" id="1_inp8g"]
+[ext_resource type="Script" uid="uid://i8ixbkbnr7b1" path="res://Scripts/CardResource.cs" id="2_od6ok"]
+
+[resource]
+script = ExtResource("2_od6ok")
+cardName = "Red Rush"
+cardText = "When this card moves, double its power."
+cardType = 2
+cardCost = 2
+cardPower = 1
+cardImage = ExtResource("1_inp8g")

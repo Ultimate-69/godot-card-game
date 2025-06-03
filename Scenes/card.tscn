@@ -32,7 +32,7 @@ corner_radius_top_right = 60
 corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
 
-[node name="Card" type="Control" node_paths=PackedStringArray("image", "name", "cost", "power")]
+[node name="Card" type="Control" node_paths=PackedStringArray("image", "name", "cost", "power", "cardButton")]
 material = SubResource("ShaderMaterial_xnv4g")
 layout_mode = 3
 anchors_preset = 0
@@ -41,6 +41,7 @@ image = NodePath("Frame/Image")
 name = NodePath("Name")
 cost = NodePath("Frame/Cost/CostLabel")
 power = NodePath("Frame/Power/PowerLabel")
+cardButton = NodePath("Button")
 
 [node name="Frame" type="TextureRect" parent="."]
 z_index = 1
@@ -109,13 +110,22 @@ vertical_alignment = 1
 [node name="Name" type="Label" parent="."]
 z_index = 1
 layout_mode = 0
-offset_left = 35.0
+offset_left = 11.0
 offset_top = 284.0
-offset_right = 244.0
+offset_right = 256.0
 offset_bottom = 342.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_brehn")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 45
 text = "CARD NAME"
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.0666667)
+z_index = 1
+layout_mode = 0
+offset_right = 265.0
+offset_bottom = 348.0

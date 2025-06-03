@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dhupqdbjrfqic"]
+
+[ext_resource type="Texture2D" uid="uid://jbthjcmk0bfh" path="res://Assets/Images/Cards/Allen_The_Alien.webp" id="1_vebpu"]
+[ext_resource type="Script" uid="uid://i8ixbkbnr7b1" path="res://Scripts/CardResource.cs" id="2_sb3we"]
+
+[resource]
+script = ExtResource("2_sb3we")
+cardName = "Allen The Alien"
+cardText = "When this card is destroyed, regenerate with +3 Power"
+cardType = 2
+cardCost = 2
+cardPower = 2
+cardImage = ExtResource("1_vebpu")

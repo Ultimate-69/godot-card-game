@@ -1,23 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://vegggsqvj0yo"]
+[gd_scene load_steps=5 format=3 uid="uid://vegggsqvj0yo"]
 
 [ext_resource type="PackedScene" uid="uid://blqn8untmt51h" path="res://Scenes/card.tscn" id="1_siu27"]
 [ext_resource type="Resource" uid="uid://cj48t2hcnglmq" path="res://Cards/Invincible.tres" id="2_siu27"]
 [ext_resource type="Resource" uid="uid://cuwpeud0b3d47" path="res://Cards/OmniMan.tres" id="3_sx6hp"]
+[ext_resource type="Resource" uid="uid://dhupqdbjrfqic" path="res://Cards/AllenTheAlien.tres" id="4_4ppfb"]
 
 [node name="Testing" type="Node2D"]
 
-[node name="Card" parent="." instance=ExtResource("1_siu27")]
-offset_left = 63.0
-offset_top = 246.0
-offset_right = 63.0
-offset_bottom = 246.0
-scale = Vector2(0.560001, 0.560001)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 121.0
+offset_top = 484.0
+offset_right = 1921.0
+offset_bottom = 831.0
+scale = Vector2(0.426579, 0.426579)
+theme_override_constants/separation = 300
+alignment = 1
+
+[node name="Card" parent="HBoxContainer" instance=ExtResource("1_siu27")]
+layout_mode = 2
 cardResource = ExtResource("2_siu27")
 
-[node name="Card2" parent="." instance=ExtResource("1_siu27")]
-offset_left = 269.0
-offset_top = 246.0
-offset_right = 269.0
-offset_bottom = 246.0
-scale = Vector2(0.560001, 0.560001)
+[node name="Card2" parent="HBoxContainer" instance=ExtResource("1_siu27")]
+layout_mode = 2
 cardResource = ExtResource("3_sx6hp")
+
+[node name="Card3" parent="HBoxContainer" instance=ExtResource("1_siu27")]
+layout_mode = 2
+cardResource = ExtResource("4_4ppfb")

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ba401kyhb284p"]
+
+[ext_resource type="Texture2D" uid="uid://cfuoay8ujoiyn" path="res://Assets/Images/Cards/N349EWFSU5qShVqWqYGsZ.webp" id="1_q1qwk"]
+[ext_resource type="Script" uid="uid://i8ixbkbnr7b1" path="res://Scripts/CardResource.cs" id="2_bii51"]
+
+[resource]
+script = ExtResource("2_bii51")
+cardName = "Cecil Stedman"
+cardText = "On Reveal: Draw 3 random cards with -1 Cost"
+cardType = 0
+cardCost = 1
+cardPower = 0
+cardImage = ExtResource("1_q1qwk")

@@ -3,6 +3,19 @@ using System;
 
 public partial class CardEffects : Node
 {
+    public static Card selectedCard;
+
+    public static void ChangeSelectedCard(Card card)
+    {
+        GD.Print(5);
+        if (selectedCard  != null)
+        {
+            selectedCard.DeSelect();
+        }
+        selectedCard = card;
+        selectedCard.Select();
+    }
+
     public static void OnReveal(CardResource card)
     {
 
@@ -20,7 +33,7 @@ public partial class CardEffects : Node
 
     public static void OnTurnStart(CardResource card)
     {
-        
+
     }
 
     public static void OnDiscard(CardResource card)

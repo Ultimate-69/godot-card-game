@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cvpwe44chato7"]
+
+[ext_resource type="Texture2D" uid="uid://d2xupstavw3ht" path="res://Assets/Images/Cards/Angstrom_Levy.webp" id="1_wbtt4"]
+[ext_resource type="Script" uid="uid://i8ixbkbnr7b1" path="res://Scripts/CardResource.cs" id="2_60y5p"]
+
+[resource]
+script = ExtResource("2_60y5p")
+cardName = "Angstrom Levy"
+cardText = "On Reveal: Copy the next card you play into your hand. It costs 0"
+cardType = 0
+cardCost = 3
+cardPower = 2
+cardImage = ExtResource("1_wbtt4")
