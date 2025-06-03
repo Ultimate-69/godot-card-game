@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dotltw7gstfle"]
+
+[ext_resource type="Script" uid="uid://i8ixbkbnr7b1" path="res://Scripts/CardResource.cs" id="1_x6uie"]
+
+[resource]
+script = ExtResource("1_x6uie")
+cardName = ""
+cardText = ""
+cardType = 0
+cardCost = 0
+cardPower = 0

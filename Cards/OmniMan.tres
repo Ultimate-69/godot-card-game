@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cuwpeud0b3d47"]
+
+[ext_resource type="Texture2D" uid="uid://cfvyg0ghigcne" path="res://Assets/Images/Cards/omni-man-invincible-comics-v0-6tsby2710erd1.webp" id="1_16o5r"]
+[ext_resource type="Script" uid="uid://i8ixbkbnr7b1" path="res://Scripts/CardResource.cs" id="2_8q27w"]
+
+[resource]
+script = ExtResource("2_8q27w")
+cardName = "Omni-Man"
+cardText = "On Reveal: Destroy all 1-Cost Cards"
+cardType = 0
+cardCost = 4
+cardPower = 4
+cardImage = ExtResource("1_16o5r")

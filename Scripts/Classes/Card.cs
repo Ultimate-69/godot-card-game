@@ -4,20 +4,8 @@ using System;
 public partial class Card : Control
 {
 
-    public enum CardType
-    {
-        OnReveal = 0,
-        OnGoing = 1,
-        Other = 2
-    }
+    [Export] public CardResource cardResource;
 
-    [Export] public string cardName;
-    [Export] public string cardText;
-    [Export] public CardType cardType;
-
-    [Export] public int cardCost;
-    [Export] public int cardPower;
-    [Export] public Texture2D cardImage;
 
     [Export] public TextureRect image;
     [Export] public Label name;
@@ -26,48 +14,49 @@ public partial class Card : Control
     public override void _Ready()
     {
         base._Ready();
-        name.Text = cardName;
-        cost.Text = cardCost.ToString();
-        power.Text = cardPower.ToString();
-        image.Texture = cardImage;
+        if (cardResource == null) return;
+        name.Text = cardResource.cardName;
+        cost.Text = cardResource.cardCost.ToString();
+        power.Text = cardResource.cardPower.ToString();
+        image.Texture = cardResource.cardImage;
     }
 
-    public virtual void OnReveal()
+    public void OnReveal()
     {
 
     }
 
-    public virtual void OnGoing()
+    public void OnGoing()
     {
 
     }
 
-    public virtual void OnTurnEnd()
+    public void OnTurnEnd()
     {
 
     }
 
-    public virtual void OnDiscard()
+    public void OnDiscard()
     {
 
     }
 
-    public virtual void OnDestroy()
+    public void OnDestroy()
     {
 
     }
 
-    public virtual void OnMove()
+    public void OnMove()
     {
 
     }
 
-    public virtual void OnGameStart()
+    public void OnGameStart()
     {
 
     }
 
-    public virtual void OnGameEnd()
+    public void OnGameEnd()
     {
 
     }

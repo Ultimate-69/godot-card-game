@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cj48t2hcnglmq"]
+
+[ext_resource type="Texture2D" uid="uid://dpjis8gqqk2ug" path="res://Assets/Images/Cards/Invincible_Vol_1_79_002.webp" id="1_7iryb"]
+[ext_resource type="Script" uid="uid://i8ixbkbnr7b1" path="res://Scripts/CardResource.cs" id="2_plb35"]
+
+[resource]
+script = ExtResource("2_plb35")
+cardName = "Invincible"
+cardText = "Ongoing: This card can't be destroyed."
+cardType = 1
+cardCost = 2
+cardPower = 3
+cardImage = ExtResource("1_7iryb")
