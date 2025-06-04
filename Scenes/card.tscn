@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://blqn8untmt51h"]
+[gd_scene load_steps=12 format=3 uid="uid://blqn8untmt51h"]
 
 [ext_resource type="Texture2D" uid="uid://dckbt80yjggle" path="res://Assets/Images/snap_frame.png" id="1_0qqmn"]
 [ext_resource type="Script" uid="uid://dnqeodsnlmtdj" path="res://Scripts/Classes/Card.cs" id="1_eumee"]
@@ -31,6 +31,20 @@ corner_radius_top_left = 60
 corner_radius_top_right = 60
 corner_radius_bottom_right = 60
 corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bnspj"]
+bg_color = Color(0.0994691, 0.0994691, 0.0994691, 0.270588)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xnv4g"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5wvb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Card" type="Control" node_paths=PackedStringArray("image", "name", "cost", "power", "cardButton")]
 material = SubResource("ShaderMaterial_xnv4g")
@@ -124,8 +138,10 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
-modulate = Color(1, 1, 1, 0.0666667)
 z_index = 1
 layout_mode = 0
 offset_right = 265.0
 offset_bottom = 348.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_bnspj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xnv4g")
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5wvb")

@@ -4,13 +4,19 @@ using System;
 public partial class Card : Control
 {
 
-    [Export] public CardResource cardResource;
+    [Export]
+    public CardResource cardResource;
 
-    [Export] public TextureRect image;
-    [Export] public Label name;
-    [Export] public Label cost;
-    [Export] public Label power;
-    [Export] public Button cardButton;
+    [Export]
+    public TextureRect image;
+    [Export]
+    public Label name;
+    [Export]
+    public Label cost;
+    [Export]
+    public Label power;
+    [Export]
+    public Button cardButton;
 
     bool isActive;
     Tween tween;
@@ -24,6 +30,7 @@ public partial class Card : Control
         image.Texture = cardResource.cardImage;
 
         cardButton.Pressed += () => OnPressed();
+        cardButton.GrabFocus();
     }
 
     void OnPressed()
