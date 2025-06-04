@@ -35,6 +35,7 @@ public partial class Location : Control
         {
             if (AllocateCardToLocation(false))
             {
+                GD.Print("Remember to implement card removal from the arrays.");
                 powerBottom.Text = (powerBottom.Text.ToInt() + CardEffects.selectedCard.cardResource.cardPower).ToString();
                 CardEffects.selectedCard.cardButton.QueueFree();
                 CardEffects.selectedCard.Reparent(bottomGrid);

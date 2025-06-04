@@ -35,6 +35,11 @@ public partial class Card : Control
 
     void OnPressed()
     {
+        if (CardEffects.selectedCard == this)
+        {
+            CardEffects.ChangeSelectedCard(null);
+            return;
+        }
         CardEffects.ChangeSelectedCard(this);
     }
 
