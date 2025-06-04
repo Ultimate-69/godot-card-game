@@ -9,10 +9,10 @@
 [node name="Testing" type="Node2D"]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 209.0
-offset_top = 521.0
-offset_right = 2009.0
-offset_bottom = 868.0
+offset_left = 252.0
+offset_top = 585.0
+offset_right = 2052.0
+offset_bottom = 932.0
 scale = Vector2(0.346579, 0.346579)
 theme_override_constants/separation = 300
 alignment = 1
@@ -26,6 +26,26 @@ layout_mode = 2
 cardResource = ExtResource("3_sx6hp")
 
 [node name="Card3" parent="HBoxContainer" instance=ExtResource("1_siu27")]
+layout_mode = 2
+cardResource = ExtResource("4_4ppfb")
+
+[node name="Card4" parent="HBoxContainer" instance=ExtResource("1_siu27")]
+layout_mode = 2
+cardResource = ExtResource("4_4ppfb")
+
+[node name="Card5" parent="HBoxContainer" instance=ExtResource("1_siu27")]
+layout_mode = 2
+cardResource = ExtResource("4_4ppfb")
+
+[node name="Card6" parent="HBoxContainer" instance=ExtResource("1_siu27")]
+layout_mode = 2
+cardResource = ExtResource("4_4ppfb")
+
+[node name="Card7" parent="HBoxContainer" instance=ExtResource("1_siu27")]
+layout_mode = 2
+cardResource = ExtResource("4_4ppfb")
+
+[node name="Card8" parent="HBoxContainer" instance=ExtResource("1_siu27")]
 layout_mode = 2
 cardResource = ExtResource("4_4ppfb")
 

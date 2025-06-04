@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 CardEffects="*res://Scripts/CardEffects.cs"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="New Game Project"
