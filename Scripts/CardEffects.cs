@@ -7,13 +7,15 @@ public partial class CardEffects : Node
 
     public static void ChangeSelectedCard(Card card)
     {
-        GD.Print(5);
-        if (selectedCard  != null)
+        if (selectedCard != null)
         {
             selectedCard.DeSelect();
         }
-        selectedCard = card;
-        selectedCard.Select();
+        if (card != null)
+        {
+            selectedCard = card;
+            selectedCard.Select();
+        }
     }
 
     public static void OnReveal(CardResource card)

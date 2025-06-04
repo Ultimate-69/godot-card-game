@@ -33,7 +33,7 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gu4jm"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="Location" type="Control"]
+[node name="Location" type="Control" node_paths=PackedStringArray("image", "name", "effect", "powerTop", "powerBottom", "locationButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,6 +41,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1f8lt")
+image = NodePath("Frame/Image")
+name = NodePath("Name")
+effect = NodePath("Effect")
+powerTop = NodePath("Frame/PowerTop/PowerLabel")
+powerBottom = NodePath("Frame/PowerBottom/PowerLabel")
+locationButton = NodePath("Button")
 
 [node name="Frame" type="TextureRect" parent="."]
 z_index = 1
@@ -135,6 +141,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.0745098)
 z_index = 1
 offset_right = 265.0
 offset_bottom = 348.0

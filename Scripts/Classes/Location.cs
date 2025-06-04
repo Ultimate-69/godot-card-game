@@ -17,6 +17,20 @@ public partial class Location : Control
     [Export]
     public Label powerBottom;
     [Export]
-    public Button cardButton;
+    public Button locationButton;
+
+    Card[] cardsTop = new Card[4];
+    Card[] cardsBottom = new Card[4];
+
+    public override void _Ready()
+    {
+        base._Ready();
+        locationButton.Pressed += () =>
+        {
+            powerBottom.Text = (powerBottom.Text.ToInt() + CardEffects.selectedCard.cardResource.cardPower).ToString();
+            CardEffects.selectedCard.cardButton.Disabled = true;
+            CardEffects.ChangeSelectedCard(null);
+        };
+    }
 
 }

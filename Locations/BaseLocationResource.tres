@@ -1,3 +1,8 @@
-[gd_resource type="Resource" format=3 uid="uid://bulhqwxpxdlnm"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bulhqwxpxdlnm"]
+
+[ext_resource type="Script" uid="uid://bmxvv50tlvhu5" path="res://Scripts/LocationResource.cs" id="1_1rcnx"]
 
 [resource]
+script = ExtResource("1_1rcnx")
+name = ""
+effect = ""
