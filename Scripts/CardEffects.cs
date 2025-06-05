@@ -4,6 +4,14 @@ using System.Linq;
 
 public partial class CardEffects : Node
 {
+    public enum Locations
+    {
+        None = 0,
+        Left = 1,
+        Middle = 2,
+        Right = 3
+    }
+
     public static Location[] locations;
     public static Card selectedCard;
 

@@ -3,6 +3,8 @@ using System;
 
 public partial class Location : Control
 {
+    [Export]
+    public CardEffects.Locations location;
 
     enum CardLocations
     {
@@ -30,6 +32,9 @@ public partial class Location : Control
     [Export]
     public GridContainer bottomGrid;
 
+    int topPower = 0;
+    int bottomPower = 0;
+
     Card[] cardsTop = new Card[4];
     Card[] cardsBottom = new Card[4];
 
@@ -45,6 +50,7 @@ public partial class Location : Control
             {
                 CardEffects.selectedCard.cardButton.QueueFree();
                 CardEffects.selectedCard.Reparent(bottomGrid);
+                CardEffects.selectedCard.location = location;
                 CardEffects.ChangeSelectedCard(null);
                 CalculatePower();
             }
@@ -53,9 +59,9 @@ public partial class Location : Control
 
     // The bool manages if it allocates to the top array or bottom array.
     // If it returns true, success. Otherwise, fail.
-    private bool AllocateCardToLocation(CardLocations location)
+    private bool AllocateCardToLocation(CardLocations cardLocation)
     {
-        if (location == CardLocations.Top)
+        if (cardLocation == CardLocations.Top)
         {
             for (int i = 0; i < cardsTop.Length; i++)
             {
@@ -66,7 +72,7 @@ public partial class Location : Control
                 }
             }
         }
-        else if (location == CardLocations.Bottom)
+        else if (cardLocation == CardLocations.Bottom)
         {
             for (int i = 0; i < cardsBottom.Length; i++)
             {
@@ -82,17 +88,22 @@ public partial class Location : Control
 
     public void CalculatePower()
     {
+        topPower = 0;
+        bottomPower = 0;
+
         foreach (Card card in cardsTop)
         {
             if (card == null) continue;
-            powerTop.Text = (powerTop.Text.ToInt() + card.cardResource.cardPower).ToString();
+            topPower += card.cardResource.cardPower;
         }
 
         foreach (Card card in cardsBottom)
         {
             if (card == null) continue;
-            powerBottom.Text = (powerBottom.Text.ToInt() + card.cardResource.cardPower).ToString();
+            bottomPower += card.cardResource.cardPower;
         }
+        powerTop.Text = topPower.ToString();
+        powerBottom.Text = bottomPower.ToString();
     }
 
 }

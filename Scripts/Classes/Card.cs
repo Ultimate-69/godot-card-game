@@ -4,6 +4,8 @@ using System;
 public partial class Card : Control
 {
 
+    public CardEffects.Locations location = CardEffects.Locations.None;
+
     [Export]
     public CardResource cardResource;
 
@@ -30,7 +32,9 @@ public partial class Card : Control
         image.Texture = cardResource.cardImage;
 
         cardButton.Pressed += () => OnPressed();
-        cardButton.GrabFocus();
+
+        cardButton.MouseEntered += () => Select();
+        cardButton.MouseExited += () => DeSelect(true);
     }
 
     void OnPressed()
@@ -50,8 +54,9 @@ public partial class Card : Control
         tween.TweenProperty(this, "scale", new Vector2(1.1f, 1.1f), 0.1f);
     }
 
-    public void DeSelect()
+    public void DeSelect(bool hover = false)
     {
+        if (hover && CardEffects.selectedCard == this) return;
         isActive = false;
         tween = GetTree().CreateTween();
         tween.TweenProperty(this, "scale", new Vector2(1.0f, 1.0f), 0.1f);
