@@ -43,11 +43,10 @@ public partial class Location : Control
             if (CardEffects.selectedCard == null || CardEffects.selectedCard is not Card) return;
             if (AllocateCardToLocation(CardLocations.Bottom))
             {
-                GD.Print("Remember to implement card removal from the arrays.");
-                powerBottom.Text = (powerBottom.Text.ToInt() + CardEffects.selectedCard.cardResource.cardPower).ToString();
                 CardEffects.selectedCard.cardButton.QueueFree();
                 CardEffects.selectedCard.Reparent(bottomGrid);
                 CardEffects.ChangeSelectedCard(null);
+                CalculatePower();
             }
         };
     }
@@ -79,7 +78,21 @@ public partial class Location : Control
             }
         }
         return false;
+    }
 
+    public void CalculatePower()
+    {
+        foreach (Card card in cardsTop)
+        {
+            if (card == null) continue;
+            powerTop.Text = (powerTop.Text.ToInt() + card.cardResource.cardPower).ToString();
+        }
+
+        foreach (Card card in cardsBottom)
+        {
+            if (card == null) continue;
+            powerBottom.Text = (powerBottom.Text.ToInt() + card.cardResource.cardPower).ToString();
+        }
     }
 
 }
