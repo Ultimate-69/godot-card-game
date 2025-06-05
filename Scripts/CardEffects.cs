@@ -11,10 +11,15 @@ public partial class CardEffects : Node
         {
             selectedCard.DeSelect();
         }
+
         if (card != null)
         {
             selectedCard = card;
             selectedCard.Select();
+        }
+        else
+        {
+            selectedCard = null;
         }
     }
 

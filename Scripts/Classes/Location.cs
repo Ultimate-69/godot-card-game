@@ -33,6 +33,7 @@ public partial class Location : Control
         base._Ready();
         locationButton.Pressed += () =>
         {
+            if (CardEffects.selectedCard == null || CardEffects.selectedCard is not Card) return;
             if (AllocateCardToLocation(false))
             {
                 GD.Print("Remember to implement card removal from the arrays.");

@@ -138,6 +138,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0.0431373)
 z_index = 1
 layout_mode = 0
 offset_right = 265.0
