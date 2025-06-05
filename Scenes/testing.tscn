@@ -75,5 +75,5 @@ offset_bottom = 158.0
 scale = Vector2(0.662497, 0.662497)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(632, 350)
-zoom = Vector2(0.845, 0.845)
+position = Vector2(611, 337)
+zoom = Vector2(0.8, 0.8)

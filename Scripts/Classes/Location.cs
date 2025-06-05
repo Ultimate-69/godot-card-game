@@ -3,6 +3,13 @@ using System;
 
 public partial class Location : Control
 {
+
+    enum CardLocations
+    {
+        Top = 0,
+        Bottom = 1,
+    }
+
     [Export]
     public LocationResource locationResource;
 
@@ -34,7 +41,7 @@ public partial class Location : Control
         locationButton.Pressed += () =>
         {
             if (CardEffects.selectedCard == null || CardEffects.selectedCard is not Card) return;
-            if (AllocateCardToLocation(false))
+            if (AllocateCardToLocation(CardLocations.Bottom))
             {
                 GD.Print("Remember to implement card removal from the arrays.");
                 powerBottom.Text = (powerBottom.Text.ToInt() + CardEffects.selectedCard.cardResource.cardPower).ToString();
@@ -47,9 +54,9 @@ public partial class Location : Control
 
     // The bool manages if it allocates to the top array or bottom array.
     // If it returns true, success. Otherwise, fail.
-    private bool AllocateCardToLocation(bool top)
+    private bool AllocateCardToLocation(CardLocations location)
     {
-        if (top)
+        if (location == CardLocations.Top)
         {
             for (int i = 0; i < cardsTop.Length; i++)
             {
@@ -60,7 +67,7 @@ public partial class Location : Control
                 }
             }
         }
-        else
+        else if (location == CardLocations.Bottom)
         {
             for (int i = 0; i < cardsBottom.Length; i++)
             {
