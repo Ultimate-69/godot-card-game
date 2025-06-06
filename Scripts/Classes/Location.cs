@@ -43,6 +43,14 @@ public partial class Location : Control
     public override void _Ready()
     {
         base._Ready();
+
+        if (locationResource != null)
+        {
+            name.Text = locationResource.locationName;
+            effect.Text = locationResource.locationEffect;
+            image.Texture = locationResource.locationImage;
+        }
+
         locationButton.Pressed += () =>
         {
             if (CardEffects.selectedCard == null || CardEffects.selectedCard is not Card) return;
