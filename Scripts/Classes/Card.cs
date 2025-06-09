@@ -65,6 +65,7 @@ public partial class Card : Control
     public void OnReveal()
     {
         CardEffects.OnReveal(this);
+        TurnGlobals.gameCards.Add(this);
     }
 
     public void OnGoing()

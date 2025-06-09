@@ -12,14 +12,12 @@ public partial class CardEffects : Node
         Right = 3
     }
 
-    public static Location[] locations;
     public static Card selectedCard;
 
     public override void _Ready()
     {
         base._Ready();
         Node game = GetParent().GetChildren()[1];
-        locations =  game.GetChildren().OfType<Location>().ToArray();
     }
 
     public static void ChangeSelectedCard(Card card)
@@ -44,7 +42,7 @@ public partial class CardEffects : Node
     {
         if (card.cardResource.cardName == "Omni-Man")
         {
-            foreach (Location location in locations)
+            foreach (Location location in TurnGlobals.gameLocations)
             {
                 GridContainer[] grids = location.GetChildren().OfType<GridContainer>().ToArray();
                 foreach (GridContainer grid in grids)

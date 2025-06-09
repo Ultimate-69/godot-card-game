@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Location : Control
 {
@@ -38,7 +39,18 @@ public partial class Location : Control
     Card[] cardsTop = new Card[4];
     Card[] cardsBottom = new Card[4];
 
+    List<Card> revealCardsQueue = new List<Card>();
+
     Tween tween;
+
+    public void OnTurnStart()
+    {
+        foreach (Card card in revealCardsQueue)
+        {
+            card.OnReveal();
+        }
+        revealCardsQueue.Clear();
+    }
 
     public override void _Ready()
     {
@@ -49,6 +61,7 @@ public partial class Location : Control
             name.Text = locationResource.locationName;
             effect.Text = locationResource.locationEffect;
             image.Texture = locationResource.locationImage;
+            TurnGlobals.gameLocations.Add(this);
         }
 
         locationButton.Pressed += () =>
@@ -59,6 +72,7 @@ public partial class Location : Control
                 CardEffects.selectedCard.cardButton.QueueFree();
                 CardEffects.selectedCard.Reparent(bottomGrid);
                 CardEffects.selectedCard.location = location;
+                revealCardsQueue.Add(CardEffects.selectedCard);
                 CardEffects.ChangeSelectedCard(null);
                 CalculatePower();
             }

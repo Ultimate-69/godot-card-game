@@ -61,6 +61,7 @@ texture = ExtResource("1_cbjjd")
 expand_mode = 1
 
 [node name="Image" type="TextureRect" parent="Frame"]
+modulate = Color(0.798701, 0.798701, 0.798701, 1)
 layout_mode = 0
 offset_left = 68.0
 offset_top = 79.0
@@ -125,7 +126,7 @@ offset_bottom = 410.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_dnsau")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 20
 text = "Location Effect"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -141,7 +142,7 @@ offset_bottom = 303.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("5_dnsau")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 46
 text = "LOCATION NAME"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bgxuw4wdknkyi"]
+
+[ext_resource type="Script" uid="uid://bmxvv50tlvhu5" path="res://Scripts/LocationResource.cs" id="1_eqnew"]
+[ext_resource type="Texture2D" uid="uid://b0415ujxxoo55" path="res://Assets/Images/Locations/Screenshot 2025-06-06 153535.png" id="1_mpsat"]
+
+[resource]
+script = ExtResource("1_eqnew")
+locationName = "Planet Viltrum"
+locationEffect = "Each turn, destroy all cards here except the highest power cards."
+locationImage = ExtResource("1_mpsat")
